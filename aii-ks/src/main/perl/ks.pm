@@ -862,7 +862,7 @@ EOF
 
     ksuserhooks ($config, PREENDHOOK);
 
-    my $end = $config->getElement(END_SCRIPT_FIELD)->getValue();
+    my $end = $config->getElement(END_SCRIPT_FIELD)->getValue() > $config->elementExists(END_SCRIPT_FIELD) : '%end';
     my $kstree = $config->getElement(KS)->getTree;
     my $version = get_anaconda_version($kstree);
 
